@@ -1,18 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="24sp"
+    android:background="@color/white"
     tools:context=".JogoActivity">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewJogadores"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textAlignment="center"
+        tools:text="José x Mariana"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textViewJogadorAtual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        tools:text="Jogando: José"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TableLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/button0"
+                android:background="@drawable/button_tabuleiro"
+                android:layout_weight="0.3"
+                android:textSize="50sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"/>
+
+            <View
+                android:background="@drawable/tabuleiro_divisao"
+                android:layout_width="2dp"
+                android:layout_height="120dp" />
+
+            <Button
+                android:id="@+id/button1"
+                android:background="@drawable/button_tabuleiro"
+                android:layout_weight="0.3"
+                android:textSize="50sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"/>
+
+            <View
+                android:background="@drawable/tabuleiro_divisao"
+                android:layout_width="2dp"
+                android:layout_height="120dp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:background="@drawable/button_tabuleiro"
+                android:layout_weight="0.3"
+                android:textSize="50sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"/>
+        </TableRow>
+
+        <View
+            android:background="@drawable/tabuleiro_divisao"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TableRow
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_tabuleiro"
+                android:textSize="50sp" />
+
+            <View
+                android:background="@drawable/tabuleiro_divisao"
+                android:layout_width="2dp"
+                android:layout_height="120dp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_tabuleiro"
+                android:textSize="50sp" />
+
+            <View
+                android:background="@drawable/tabuleiro_divisao"
+                android:layout_width="2dp"
+                android:layout_height="120dp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_tabuleiro"
+                android:textSize="50sp" />
+        </TableRow>
+
+        <View
+            android:background="@drawable/tabuleiro_divisao"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TableRow
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_tabuleiro"
+                android:textSize="50sp" />
+
+            <View
+                android:background="@drawable/tabuleiro_divisao"
+                android:layout_width="2dp"
+                android:layout_height="120dp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_tabuleiro"
+                android:textSize="50sp" />
+
+            <View
+                android:background="@drawable/tabuleiro_divisao"
+                android:layout_width="2dp"
+                android:layout_height="120dp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/button_tabuleiro"
+                android:textSize="50sp" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
