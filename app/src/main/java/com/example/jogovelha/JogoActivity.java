@@ -70,6 +70,91 @@ public class JogoActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        if (v.getId() == R.id.button0) {
+            button0.setText(jogo.getMarcacao());
+            tabuleiro[0][0] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button1) {
+            button1.setText(jogo.getMarcacao());
+            tabuleiro[0][1] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button2) {
+            button2.setText(jogo.getMarcacao());
+            tabuleiro[0][2] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button3) {
+            button3.setText(jogo.getMarcacao());
+            tabuleiro[1][0] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button4) {
+            button4.setText(jogo.getMarcacao());
+            tabuleiro[1][1] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button5) {
+            button5.setText(jogo.getMarcacao());
+            tabuleiro[1][2] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button6) {
+            button6.setText(jogo.getMarcacao());
+            tabuleiro[2][0] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button7) {
+            button7.setText(jogo.getMarcacao());
+            tabuleiro[2][1] = jogo.getMarcacao();
+        } else if (v.getId() == R.id.button8) {
+            button8.setText(jogo.getMarcacao());
+            tabuleiro[2][2] = jogo.getMarcacao();
+        }
+
+        int numeroJogadas = jogo.getQtdeJogadasDisponiveis() - 1;
+        jogo.setQtdeJogadasDisponiveis(numeroJogadas);
+
+        verificarGanhador();
+    }
+
+    private void verificarGanhador() {
+        if (tabuleiro[0][0].equals(jogo.getMarcacao()) &&
+            tabuleiro[0][1].equals(jogo.getMarcacao()) &&
+            tabuleiro[0][2].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        } else if (tabuleiro[1][0].equals(jogo.getMarcacao()) &&
+                tabuleiro[1][1].equals(jogo.getMarcacao()) &&
+                tabuleiro[1][2].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        } else if (tabuleiro[2][0].equals(jogo.getMarcacao()) &&
+                tabuleiro[2][1].equals(jogo.getMarcacao()) &&
+                tabuleiro[2][2].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        } else if (tabuleiro[0][0].equals(jogo.getMarcacao()) &&
+                tabuleiro[1][0].equals(jogo.getMarcacao()) &&
+                tabuleiro[2][0].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        } else if (tabuleiro[0][1].equals(jogo.getMarcacao()) &&
+                tabuleiro[1][1].equals(jogo.getMarcacao()) &&
+                tabuleiro[2][1].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        } else if (tabuleiro[0][2].equals(jogo.getMarcacao()) &&
+                tabuleiro[1][2].equals(jogo.getMarcacao()) &&
+                tabuleiro[2][2].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        } else if (tabuleiro[0][0].equals(jogo.getMarcacao()) &&
+                tabuleiro[1][1].equals(jogo.getMarcacao()) &&
+                tabuleiro[2][2].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        } else if (tabuleiro[0][2].equals(jogo.getMarcacao()) &&
+                tabuleiro[1][1].equals(jogo.getMarcacao()) &&
+                tabuleiro[2][0].equals(jogo.getMarcacao())) {
+            jogo.setHouveGanhador(true);
+        }
+
+        if (jogo.isHouveGanhador() || jogo.getQtdeJogadasDisponiveis() == 0) {
+            showModal();
+        } else {
+            jogo.alterarMarcacao();
+            jogo.alterarJogador();
+            textViewJogadorAtual.setText("Jogando: ".concat(jogo.getJogadorAtual()));
+        }
 
     }
+
+    private void showModal() {
+        Som.parar();
+        Som.executar(this, R.raw.success);
+    }
+
+
+
 }
